@@ -1,2 +1,2 @@
-FROM parvez/webapp
+FROM prahama/webapp
 ADD . /var/www/html
