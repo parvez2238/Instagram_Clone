@@ -1,6 +1,85 @@
-<html>
-<title>DevOps CICD</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Stylish Blog Page</title>
+    <link rel="stylesheet" href="styles_blog.css"> <!-- Link to an external CSS file -->
+</head>
 <body>
-<h1>Devops test CICD pipeline</h1>
+    <div class="container">
+        <h1>Welcome to My Blog</h1>
+        <!-- Blog 1 -->
+        <div class="blog">
+            <img src="/home/parvez/development/Front_End/couple-having-date-night.jpg" alt="Blog 1 Image">
+            <h2>The Meeting</h2>
+            <p>It was a moment I had been eagerly waiting for – the day I would finally meet my girlfriend in person. Our story is a bit unique. We attended the same school, but fate had a different plan for us. I left our school before we ever had a chance to cross paths.</p>
+    <p>Years went by, and we lost touch. However, destiny had a way of bringing us back together. When I saw her for the first time since leaving school, I was completely mesmerized. She was not only incredibly pretty and cute, but her intelligence shone through as well.</p>
+    <p>As we sat down to talk, it felt like we had known each other forever. The conversation flowed effortlessly, and I couldn't help but feel grateful for the unexpected twist in our journey. Meeting her was like a dream come true, and I knew right then that this was the beginning of something beautiful.</p>
+    <div class="blog-options">
+            <button class="edit-button" onclick="editBlog(this)">Edit</button>
+            <button class="delete-button" onclick="deleteBlog(this)">Delete</button>
+        </div>
+        </div>
+        <!-- Blog 2 -->
+        <div class="blog">
+            <img src="/home/parvez/development/Front_End/couple-having-date-night.jpg" alt="Blog 2 Image">
+            <h2>You Never Needed any Help</h2>
+            <p>This is the content of Blog 2. It can include some text, images, and more.</p>
+            <div class="blog-options">
+            <button class="edit-button" onclick="editBlog(this)">Edit</button>
+            <button class="delete-button" onclick="deleteBlog(this)">Delete</button>
+        </div>
+        </div>
+        <!-- Blog 3 -->
+        <div class="blog">
+            <img src="/home/parvez/development/Front_End/couple-having-date-night.jpg" alt="Blog 5 Image">
+            <h2>The Final Truth</h2>
+            <p>This is the content of Blog 5. It can include some text, images, and more.</p>
+            <div class="blog-options">
+            <button class="edit-button" onclick="editBlog(this)">Edit</button>
+            <button class="delete-button" onclick="deleteBlog(this)">Delete</button>
+        </div>
+        </div>
+        <!-- Button to add more blogs -->
+        <button class="add-button" onclick="addBlog()">Add Blog</button>
+    </div>
+<footer class="footer">
+        <p>&copy; 2023 Parvez. All rights reserved.</p>
+    </footer>
+<script>
+    // JavaScript function to edit a blog
+    function editBlog(button) {
+        const blog = button.closest('.blog');
+        const content = blog.querySelector('p');
+        const newContent = prompt('Edit the blog content:', content.textContent);
+        
+        if (newContent !== null && newContent.trim() !== '') {
+            content.textContent = newContent;
+        }
+    }
+    // JavaScript function to delete a blog
+    function deleteBlog(button) {
+        const blog = button.closest('.blog');
+        // Implement your delete functionality here, e.g., remove the blog from the page.
+        blog.remove();
+    }
+</script>
+
+    <script>
+        // JavaScript function to add a new blog
+        function addBlog() {
+            const container = document.querySelector('.container');
+            const newBlog = document.createElement('div');
+            newBlog.className = 'blog';
+            newBlog.innerHTML = `
+                <img src="placeholder.jpg" alt="New Blog Image">
+                <h2>New Blog Title</h2>
+                <p>This is the content of the new blog. You can customize it as needed.</p>
+            `;
+            container.insertBefore(newBlog, document.querySelector('.add-button'));
+        }
+    </script>
 </body>
 </html>
+
