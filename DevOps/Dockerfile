@@ -1,2 +1,2 @@
-FROM node:18-alpine
+FROM hshar/webapp
 ADD . /var/www/html
